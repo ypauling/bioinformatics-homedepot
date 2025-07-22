@@ -89,7 +89,7 @@ def downsample_file(input_path: str, output_path: str, N: int) -> None:
                 continue
             parts = line.strip().split("\t")
             count = int(parts[4])
-            fragments.extend(tuple(parts[:4]) * count)
+            fragments.extend([tuple(parts[:4])] * count)
     logger.info("Finished reading {}.".format(input_path))
 
     logger.info("Downsampling {}.".format(input_path))
