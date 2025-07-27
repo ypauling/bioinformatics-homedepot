@@ -369,7 +369,7 @@ def main():
         input_df["attr_dict"] = input_df["attribute"].apply(
             lambda x: parse_attr(x, args.input_type)
         )
-        print(input_df["attr_dict"])
+        print(input_df["attribute"])
         input_df["name"] = input_df["attr_dict"].apply(lambda d: d.get(args.attr_id))
     except Exception as e:
         logger.info("Error when extract %s from attributes: %s.", args.attr_id, e)
